@@ -169,6 +169,14 @@ PRODUCT_PACKAGES += \
     libhealthd.cm
 endif
 
+# Cromite Webview
+PRODUCT_PACKAGES += \
+    cromite-webview
+
+# DNSCrypt
+PRODUCT_PACKAGES += \
+    dnscrypt-proxy
+
 # ExFAT support
 WITH_EXFAT ?= true
 ifeq ($(WITH_EXFAT),true)
@@ -188,6 +196,10 @@ PRODUCT_PACKAGES += \
     sshd_config \
     ssh-keygen \
     start-ssh
+
+# Privacy-friendly netmonitor
+PRODUCT_PACKAGES += \
+    privacy-friendly-netmonitor
 
 # rsync
 PRODUCT_PACKAGES += \
@@ -276,8 +288,8 @@ ifdef CM_BUILDTYPE
         endif
     endif
 else
-    # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
-    CM_BUILDTYPE := UNOFFICIAL
+    # If CM_BUILDTYPE is not defined, set to NIGHTLY
+    CM_BUILDTYPE := NIGHTLY
     CM_EXTRAVERSION :=
 endif
 
